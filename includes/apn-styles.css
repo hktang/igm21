@@ -1,0 +1,227 @@
+﻿@media print
+ {
+	nav, #form-jackpot {
+	  display: none;
+	}
+ }
+  
+
+@media all
+{
+    /* Bootstrap overrides*/
+	
+	.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+	  color: #DC4405;
+	}
+
+	.navbar-default .navbar-nav > li > a {
+	  color: #337ab7;
+	}	
+	
+	.navbar-default .navbar-nav > li > a:hover {
+	  color: #FFF;
+	  background-color: #666;
+	}
+
+	/* Space out content a bit */
+	body {
+	  padding-top: 20px;
+	  padding-bottom: 20px;
+	}
+
+	/* Custom page header */
+	.header {
+	  text-align: center;
+	}
+	
+	#header-logo-mc {
+	  margin-right:40px;
+	}
+	
+	.header a, .header a:hover {
+	  text-decoration:none;
+	}
+	
+	.header-logos {
+	  margin: 30px auto 40px auto;
+	}
+	
+	form h3 {
+	  border-top: 1px solid #e5e5e5; 
+	  padding-top: 20px;
+	  margin-top: 40px;
+	}
+
+	.thumbnail {
+	  padding: 0 30px;
+	}
+
+	.form-el-inline {
+	  margin-right: 10px !important;
+	}
+
+	form > div.thumbnail > div.row,
+	form > div.thumbnail > div.form-group {
+	  margin-left: 0px;
+	}
+
+	form > div.thumbnail > div.form-group {
+	  margin-right: 10px;
+	}
+
+	legend {
+	  margin-bottom: 0;
+	}
+
+	fieldset {
+	  margin-top: 16px;
+	}
+
+	div.recap dt{
+	  margin-top: 12px;
+	}
+	
+	div.recap li.label {
+	  margin-right: 5px;
+	}
+	
+	div.recap {
+	  margin-top: 20px;
+	}
+
+	input#register{
+	  margin: 10px auto;
+	}
+	
+	/* Custom page footer */
+	.footer {
+	  padding-top: 19px;
+	  margin-top: 80px;
+	  color: #777;
+	  border-top: 1px solid #e5e5e5;
+	  text-align: center;
+	}
+	
+	/*APN START*/
+	.tbc {
+	  background-color: #FFFBCC;
+	}
+
+	#home-map-jumbotron {
+	  padding:0;
+	  position:relative;
+	}
+	
+	#home-map-canvas {
+	  height:180px;
+	  margin:0;
+	  padding:0;
+	}
+	
+	div.home-jumbo-info{
+	  position:absolute;
+	  top:20px;
+	  left:40px;
+	  z-index:999;
+	}
+
+	div.home-jumbo-info h1 {
+	  font-size: 38px
+	}
+	
+	div.home-jumbo-info p {
+	  font-size: 18px
+	}
+	
+	#home-map-jumbotron li.thumbnail {
+	  padding-top: 16px;
+	  background-color: #7C87BE;
+	  color: #FFF;
+	  -moz-opacity: 0.9;
+	  -khtml-opacity: 0.9;
+	  opacity: 0.9;
+	  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha"(Opacity=90);
+	  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=90);
+	  filter:alpha(opacity=90);
+	}
+
+	.home-announcement h3 {
+	  margin-top:0;
+	}
+	
+	.home-announcement-date {
+	  margin-bottom:0;
+	  padding-bottom:3px;
+	  margin-left:2px;
+	  color:#B163A3;
+	}
+	
+	.single-announcement {
+	  padding:20px 0 10px 0;
+	  border-bottom:1px dotted #ddd;
+	}
+	
+	.single-announcement:last-child {
+	  border-bottom:none;
+	}
+	
+	.required:before {
+	  content:"* ";
+	  color: red;
+	  font-size: 16px;
+	  line-height: 14px;
+	}
+
+	.apn-form-error-icon {
+	  font-size: 32px;
+	  float: left;
+	  margin-right: 10px;
+	  top: 11px;
+	  color: #b94a48;
+	}
+	
+	div.apn-main-content > h2 {
+	  border-bottom: 1px solid #ddd;
+	  margin-top: 0px;
+	  padding-bottom: 5px;
+	}
+	
+	div.apn-main-content > h2 .glyphicon {
+	  top: 3px;
+	}
+	
+	div.apn-sidebar {
+	  margin-bottom: 20px;
+	}
+	
+	div.apn-sidebar ul.nav-stacked .glyphicon {
+	  margin-right:12px;
+	}
+	
+	div.vcard {
+	  margin: 16px 0 10px 0;
+	}
+	
+	div.vcard .fn {
+	  font-weight:bold;
+	  margin-bottom:0;
+	}
+	
+	div#form-jackpot {
+	  display: none;
+	}
+	
+	label.error {
+	  color:red;
+	  margin-top:3px;
+	  padding:3px;
+	  border:1px dashed red;
+	}
+	
+	.form-outer {
+	  box-shadow: 3px 3px 3px #ddd;
+	  border: 1px solid #ccc;
+	}
+	
+	
+} /*@media screen*/

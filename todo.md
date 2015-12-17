@@ -1,0 +1,14 @@
+#To do list
+- [OK] Check unique submission [http://docs.formtools.org/api/?page=ft_api_check_submission_is_unique]
+- [OK] Show user submitted fields on thank you page
+- [OK] Thematise Backend admin area
+- [OK] Hide thank you page for unsucessful attempts.
+- [OK] More validation rules, 
+	- [OK] is_alpha and regex rules for input fields. 
+	- [OK] limit field length to reasonable values
+- [OK] Populate other pages
+	- [OK] Home page
+	- [OK] Contact page
+- [ABORTED] Fix excel output module
+- [OK] Client side validation
+- [OK] Setup confirmation email
