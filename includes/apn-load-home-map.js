@@ -1,8 +1,8 @@
 ﻿$(function() {
 	
-	var myLat = 27.700717;
-	var myLong = 85.291091;
-	var myZoomLevel = 7;
+	var myLat = 34.7667;
+	var myLong = 113.6500;
+	var myZoomLevel = 5;
 	var myCanvasId = "home-map-canvas";
 	
 	

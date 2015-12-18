@@ -42,7 +42,7 @@
 				<span class="emal">Email: <a href="mailto:<?php echo VENUE_EMAIL; ?>"><?php echo VENUE_EMAIL; ?></a></span><br>
 			</p>
 		</div> <!-- vcard-->
-		
+        
       </div> <!-- col-lg-8 -->
 	  
     </div> <!-- row -->
