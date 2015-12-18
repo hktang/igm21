@@ -3,10 +3,10 @@
 	/* IMPORTANT GUIDANCE ON FORM SETUP ( settings at includes/apn-functions.php )
 	
 	Before setup: 
-	- set ABSTRACT_INIT to TRUE
+	- set ABSTRACT_INIT to TRUE (if using a new form)
 	
 	After setup:
-	- set ABSTRACT_INIT to FALSE
+	- set ABSTRACT_INIT to FALSE (if using a new form)
 	
 	AFTER deadline:
 	- set ABSTRACT_OPEN to FALSE

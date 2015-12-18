@@ -13,11 +13,15 @@
 <h1>Register for <?php echo MEETING_NAME ?></h1>
 <h5 class="text-success"><?php echo MEETING_DATE ?>, <?php echo MEETING_LOCATION ?></h5>
 <p class="alert alert-warning"> 
- <strong>Note:</strong> This form is intended for APN members and invited guests only; 
- young scientists planning to attend the poster session 
- are not required to submit registration through this page. 
- Instead, please <a href="<?php echo BASE_DIRECTORY . 'abstract-submission.php'; ?>"> 
- submit your poster abstract here</a>, if you haven't done so. 
+ <strong>Note:</strong> 
+
+     APN members and invited guests to the <?php echo MEETING_NAME; ?> 
+     should register through this page.
+     
+     Young scientists planning to attend the poster session 
+     should <a href="<?php echo BASE_DIRECTORY . 'abstract-submission.php'; ?>"> 
+     submit your poster abstract/register here instead</a>. 
+
 </p>
 <p>
 	<span class="required">Required</span> fields are marked with an asterisk. 

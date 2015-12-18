@@ -192,7 +192,6 @@
 	
 	?>
 
-      <div class="row">
 	    <?php include_once "templates/sidebar.php"; ?>
         <div class="col-md-8">
 			<?php  include "form.php"; ?>

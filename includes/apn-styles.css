@@ -23,28 +23,8 @@
 	  background-color: #666;
 	}
 
-	/* Space out content a bit */
-	body {
-	  padding-top: 20px;
-	  padding-bottom: 20px;
-	}
 
 	/* Custom page header */
-	.header {
-	  text-align: center;
-	}
-	
-	#header-logo-mc {
-	  margin-right:40px;
-	}
-	
-	.header a, .header a:hover {
-	  text-decoration:none;
-	}
-	
-	.header-logos {
-	  margin: 30px auto 40px auto;
-	}
 	
 	form h3 {
 	  border-top: 1px solid #e5e5e5; 

@@ -12,10 +12,11 @@
 //meeting information
 define( "MEETING_NAME",      "21st IGM/SPG Meeting" );
 define( "MEETING_SHORTNAME", "IGM21" );
-define( "MEETING_DATE",      "18-22 March 2015" );   
+define( "MEETING_DATE",      "18-22 April 2016" );   
 define( "MEETING_VENUE",     "Zhengzhou, China" ); 
 define( "MEETING_ADDRESS",   "Zhengzhou, Henan, China" );
 define( "MEETING_LOCATION",  "Zhengzhou, China" );
+define( "MEETING_COUNTRY",   "China" );
 
 //contact information
 define( "OFFICIAL_EMAIL",    "igm21@apn-gcr.org" );
@@ -25,6 +26,7 @@ define( "VENUE_FAX",         "+86-371-1234-1234" );
 
 //site components
 define( "BASE_DIRECTORY",    "https://www.apn-gcr.org/igm/21/" );
+define( "SECURE_SERVER_URL", "https://www.apn-gcr.org/restricted/2016/igm21/" );
 define( "JUMBOTRON_IMG_1",   "china1.png" );                         // 1140x180 image x 3
 define( "JUMBOTRON_IMG_2",   "china2.png" );
 define( "JUMBOTRON_IMG_3",   "china3.png" );

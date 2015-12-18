@@ -256,7 +256,7 @@ ERRORMSG;
   <div id="roles-div" class="form-group col-md-12 form-el-inline">
 	<label class="checkbox-inline">
 	  <input <?php if ( ABSTRACT_OPEN != TRUE ) { echo 'disabled="true"'; } ?> type="checkbox" id="availability" name="availability" value="yes" >
-	  I am currently residing in Nepal and will be available to present my poster on 25 March 2015 in Kathmandu.
+	  I am currently residing in <?php echo MEETING_COUNTRY; ?> and will be available to present my poster on 25 March 2015 in Kathmandu.
 	</label>
 </div>
 
