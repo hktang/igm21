@@ -66,6 +66,7 @@ ERRORMSG;
 	<label for="jackpot" class="control-label required">Jackpot for spam-bots</label>
 	<div class="">
 		<input <?php if ( ABSTRACT_OPEN != TRUE ) { echo 'disabled="true"'; } ?> class="form-control" id="jackpot" maxlength="255"  name="jackpot" placeholder="Please avoid putting anything here. Just IGNORE it." type="text" value="<?php echo htmlspecialchars(@$fields["jackpot"]); ?>" > 
+        <input type="hidden" name="event" value="<?php echo MEETING_SHORTNAME;?>">
 	</div>
 </div>
 		

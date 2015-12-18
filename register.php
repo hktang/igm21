@@ -193,8 +193,8 @@
 	?>
 
 	    <?php include_once "templates/sidebar.php"; ?>
-        <div class="col-md-8">
+        <div class="col-md-9">
 			<?php  include "form.php"; ?>
-        </div> <!-- col-md-8 -->
+        </div> <!-- col-md-9 -->
       </div> <!-- row -->
 <?php include_once "templates/footer.php"; ?>

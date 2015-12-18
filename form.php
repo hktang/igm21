@@ -10,7 +10,7 @@
 
 <form action="<?php if (REGISTRATION_OPEN == TRUE ) { echo $_SERVER["PHP_SELF"]; }  ?>" role="form" class="form-horizontal" id="igm-register" method="post" name="" >
 <div class="thumbnail form-outer">
-<h1>Register for <?php echo MEETING_NAME ?></h1>
+<h1>Registration: <?php echo MEETING_NAME ?></h1>
 <h5 class="text-success"><?php echo MEETING_DATE ?>, <?php echo MEETING_LOCATION ?></h5>
 <p class="alert alert-warning"> 
  <strong>Note:</strong> 
@@ -87,6 +87,7 @@ ERRORMSG;
 	<label for="jackpot" class="control-label required">Jackpot for bot-spotting</label>
 	<div class="">
 		<input <?php if (REGISTRATION_OPEN != TRUE ) { echo 'disabled="true"'; } ?> class="form-control" id="jackpot" maxlength="255"  name="jackpot" placeholder="Please avoid putting anything here. Just IGNORE it." type="text" value="<?php echo htmlspecialchars(@$fields["jackpot"]); ?>" > 
+        <input type="hidden" name="event" value="<?php echo MEETING_SHORTNAME;?>">
 	</div>
 </div>
 		

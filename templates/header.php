@@ -24,7 +24,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><img id="header-logo-apn" src= "<?php echo BASE_DIRECTORY ?>includes/logo-apn-w-h.png" alt="APN logo" height="20" ></a>
+          <a class="navbar-brand" href="<?php echo BASE_DIRECTORY ?>"><img id="header-logo-apn" src= "<?php echo BASE_DIRECTORY ?>includes/logo-apn-w-h.png" alt="APN logo" height="20" ></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -50,11 +50,11 @@
                     <span class="glyphicon glyphicon-book"></span> Meeting Documents
                 </a>
             </li>
-            <li <?php echo ($page_name == 'abstract-submission') ? "class='active'" : ""; ?>>
+            <!--li <?php echo ($page_name == 'abstract-submission') ? "class='active'" : ""; ?>>
                 <a href="<?php echo BASE_DIRECTORY ?>abstract-submission.php">
                     <span class="glyphicon glyphicon-file"></span> Abstract submission
                 </a>
-            </li>					
+            </li-->
             <li <?php echo ($page_name == 'logistics') ? "class='active'" : ""; ?>>
                 <a href="<?php echo BASE_DIRECTORY ?>logistics.php">
                     <span class="glyphicon glyphicon-map-marker"></span> Logistics information

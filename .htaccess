@@ -1,6 +1,6 @@
-# ALLOW USER BY IP
-<Limit GET POST>
- order deny,allow
- deny from all
- allow from 61.123.154.48
-</Limit>
+### ALLOW USER BY IP
+##<Limit GET POST>
+## order deny,allow
+## deny from all
+## allow from 61.123.154.48
+##</Limit>
