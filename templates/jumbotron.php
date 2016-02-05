@@ -1,4 +1,4 @@
-﻿<?php 
+<?php 
 
 /* edit jumbotron info box here */
 
@@ -36,7 +36,7 @@ EOT;
 	<div class="jumbotron hidden-xs" id="home-map-jumbotron">
 <?php if ($page_name == 'home' || $page_name == 'contact' || $page_name == 'register'): ?>
 	<div class="container" id="home-map-canvas"></div>
-	<?php print $jumbo_info; ?>
+	<?php echo $jumbo_info; ?>
 <?php elseif ($page_name == 'info' || $page_name == 'logistics'): ?>
 	<div id="jumbo-carousel" class="carousel slide" data-ride="carousel" data-interval="8000">
 	  <!-- Indicators -->
@@ -49,7 +49,7 @@ EOT;
 	  <!-- Wrapper for slides -->
 	  <div class="carousel-inner">
 		<div class="item active">
-		  <img src="<?php echo BASE_DIRECTORY;?>includes/<?php echo JUMBOTRON_IMG_1; ?>" alt="Nepal">
+		  <img src="<?php echo BASE_DIRECTORY; ?>includes/<?php echo JUMBOTRON_IMG_1; ?>" alt="Nepal">
 		  <div class="carousel-caption"></div>
 		</div>
 		<div class="item">
@@ -70,7 +70,7 @@ EOT;
 		<!--span class="glyphicon glyphicon-chevron-right"></span-->
 	  </a>
 	  
-	  <?php print $jumbo_info; ?>
+	  <?php echo $jumbo_info; ?>
 </div>
 <?php endif; ?>
 	</div>

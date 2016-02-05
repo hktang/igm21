@@ -1,27 +1,27 @@
 <?php
-  require_once ("includes/apn-functions.php");
-  
-  $page_name = "register";
-  $page_title = "Registration received";
+  require_once 'includes/apn-functions.php';
+
+  $page_name = 'register';
+  $page_title = 'Registration received';
   $ps_script = '<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false"></script>
 				<script type="text/javascript" src="includes/apn-load-home-map.js"></script>'."\n";
-  
-  include_once "templates/header.php"; 
-  
-  require_once("../../forms/global/api/api.php");
-  
+
+  include_once 'templates/header.php';
+
+  require_once '../../forms/global/api/api.php';
+
   $fields = ft_api_init_form_page();
-  
+
   //setups for displaying submission
-  $fields = array_merge($_SESSION["form_tools_form"], $_POST);
- 
+  $fields = array_merge($_SESSION['form_tools_form'], $_POST);
+
   ft_api_clear_form_sessions();
-  
+
 ?>
 
-	  <?php include_once "templates/jumbotron.php"; ?>
+	  <?php include_once 'templates/jumbotron.php'; ?>
       <div class="row">
-		<?php include_once "templates/sidebar.php"; ?>
+		<?php include_once 'templates/sidebar.php'; ?>
 
         <div class="col-md-8 col-md-offset-1 apn-main-content">
 		
@@ -41,79 +41,76 @@
 		
 			<div class="thumbnail recap">
 			<h2><span class="glyphicon glyphicon-user"></span>
-				<?php print htmlspecialchars($fields['title']); ?> 
-				<?php print stripslashes(htmlspecialchars($fields['first'])); ?> 
-				<?php print stripslashes(htmlspecialchars($fields['middleName'])); ?> 
-				<?php print stripslashes(htmlspecialchars($fields['last'])); ?> 
-				<?php print stripslashes(htmlspecialchars($fields['suffix'])); ?> 
+				<?php echo htmlspecialchars($fields['title']); ?> 
+				<?php echo stripslashes(htmlspecialchars($fields['first'])); ?> 
+				<?php echo stripslashes(htmlspecialchars($fields['middleName'])); ?> 
+				<?php echo stripslashes(htmlspecialchars($fields['last'])); ?> 
+				<?php echo stripslashes(htmlspecialchars($fields['suffix'])); ?> 
 			</h2>
 			<h4>
-				<?php print stripslashes(htmlspecialchars($fields['jobTitle'])); ?> <br/>
-				<?php !empty($fields['department']) ? print (stripslashes(htmlspecialchars($fields['department'])) . "<br/>\n") : "" ; ?> 
-				<?php print stripslashes(htmlspecialchars($fields['organisation'])); ?> <br/>
+				<?php echo stripslashes(htmlspecialchars($fields['jobTitle'])); ?> <br/>
+				<?php !empty($fields['department']) ? print(stripslashes(htmlspecialchars($fields['department']))."<br/>\n") : ''; ?> 
+				<?php echo stripslashes(htmlspecialchars($fields['organisation'])); ?> <br/>
 			</h4>
 			<p>
-				<?php print stripslashes(htmlspecialchars($fields['addressLine1'])); ?> <br/>
-				<?php !empty($fields['addressLine2']) ? print (stripslashes(htmlspecialchars($fields['addressLine2'])) . "<br/>\n") : "" ; ?>
-				<?php print stripslashes(htmlspecialchars($fields['city'])); 
- 				      !empty($fields['state']) ? print (", " . stripslashes(htmlspecialchars($fields['state']))):""; 
-					  !empty($fields['zipCode']) ? print (", " . htmlspecialchars($fields['zipCode'])):"" ; 
-					  print (htmlspecialchars($fields['officeCountry'])); 
-				?>
+				<?php echo stripslashes(htmlspecialchars($fields['addressLine1'])); ?> <br/>
+				<?php !empty($fields['addressLine2']) ? print(stripslashes(htmlspecialchars($fields['addressLine2']))."<br/>\n") : ''; ?>
+				<?php echo stripslashes(htmlspecialchars($fields['city']));
+                      !empty($fields['state']) ? print(', '.stripslashes(htmlspecialchars($fields['state']))) : '';
+                      !empty($fields['zipCode']) ? print(', '.htmlspecialchars($fields['zipCode'])) : '';
+                      echo htmlspecialchars($fields['officeCountry']);
+                ?>
 			</p>
 			<hr />
 			<dl>
 				<dt>Telephone</dt>
-					<dd><?php print htmlspecialchars($fields['phone']); ?></dd>
+					<dd><?php echo htmlspecialchars($fields['phone']); ?></dd>
 				<dt>Fax</dt>
-					<dd><?php !empty($fields['fax']) ? print (htmlspecialchars($fields['fax'])) : ""; ?></dd>
+					<dd><?php !empty($fields['fax']) ? print(htmlspecialchars($fields['fax'])) : ''; ?></dd>
 				<dt>Email</dt>
-					<dd><?php print htmlspecialchars($fields['email']); ?></dd>
+					<dd><?php echo htmlspecialchars($fields['email']); ?></dd>
 				<dt>Passport No.</dt>
-					<dd><?php print stripslashes(htmlspecialchars($fields['passportNo'])); ?></dd>
+					<dd><?php echo stripslashes(htmlspecialchars($fields['passportNo'])); ?></dd>
 				<dt>Date of Birth</dt>
-					<dd><?php print htmlspecialchars($fields['dateOfBirth']); ?></dd>
+					<dd><?php echo htmlspecialchars($fields['dateOfBirth']); ?></dd>
 				<dt>Nationality</dt>
-					<dd><?php print htmlspecialchars($fields['nationality']); ?></dd>
+					<dd><?php echo htmlspecialchars($fields['nationality']); ?></dd>
 				<dt>Passport issuing authority</dt>
-					<dd><?php print stripslashes(htmlspecialchars($fields['issuingAuth'])); ?></dd>
+					<dd><?php echo stripslashes(htmlspecialchars($fields['issuingAuth'])); ?></dd>
 				<dt>Passport date of issue</dt>
-					<dd><?php print htmlspecialchars($fields['dateOfIssue']); ?></dd>
+					<dd><?php echo htmlspecialchars($fields['dateOfIssue']); ?></dd>
 				<dt>Passport date of expiry</dt>
-					<dd><?php print htmlspecialchars($fields['dateOfExpiry']); ?></dd>
+					<dd><?php echo htmlspecialchars($fields['dateOfExpiry']); ?></dd>
 				<dt>Flight arrangement</dt>
-					<dd><?php $fields['flightArrangement'] == 'self' ? print "By myself" : print "By APN Secretariat"; ?></dd>
+					<dd><?php $fields['flightArrangement'] == 'self' ? print 'By myself' : print 'By APN Secretariat'; ?></dd>
 				<dt>Room Type</dt>
-					<dd><?php if ($fields['roomType'] == 'smoking') 
-							  {
-								print "Smoking room"; 
-							  }else if ($fields['roomType'] == 'non-smoking')
-							  { 
-							    print "Non-smoking room"; 
-							  }else {
-							    print "Not specified"; 
-							  }
-							  ?>
+					<dd><?php if ($fields['roomType'] == 'smoking') {
+    echo 'Smoking room';
+} elseif ($fields['roomType'] == 'non-smoking') {
+    echo 'Non-smoking room';
+} else {
+    echo 'Not specified';
+}
+                              ?>
 					</dd>
 				<dt>Meal preferences</dt>
-					<dd><?php !empty($fields['meal']) ? print $fields['meal'] : print "Not specified"; ?></dd>
+					<dd><?php !empty($fields['meal']) ? print $fields['meal'] : print 'Not specified'; ?></dd>
 				<dt>Role in IGM/SPG Meeting</dt>
-					<dd><?php if (!empty($fields['role']))
-							  {
-								foreach ($fields['role'] as $val){
-									print "<li class=\"label label-default\">" . htmlspecialchars($val) ."</li>" ;
-								}
-							  }else{
-							       print "Not specified";
-							  }
-						?>
+					<dd><?php if (!empty($fields['role'])) {
+    foreach ($fields['role'] as $val) {
+        echo '<li class="label label-default">'.htmlspecialchars($val).'</li>';
+    }
+} else {
+    echo 'Not specified';
+}
+                        ?>
 					</dd>
 				<dt>Additional information</dt>
-					<dd><?php !empty($fields['requirements']) ? print stripslashes(htmlspecialchars($fields['requirements'])) : print "Not specified"; ?></dd>
+					<dd><?php !empty($fields['requirements']) ? print stripslashes(htmlspecialchars($fields['requirements'])) : print 'Not specified'; ?></dd>
 			</dl>
 			</div>
 		 <?php endif; ?>
         </div> <!-- col-lg-8 -->
       </div> <!-- row -->
 
-<?php include_once "templates/footer.php"; ?>
+<?php include_once 'templates/footer.php'; ?>
