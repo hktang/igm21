@@ -30,26 +30,6 @@ $(function() {
 	*/
 	genderGuess();
 		
-	/*
-	* Properly disable conflicting options for "roles" field.
-	*/
-	roleConflictFree ("input#role1", [5,6,7], [2,3,4]); //nfp
-	roleConflictFree ("input#role2", [5,6,7], [1,3,4]); //sc
-	roleConflictFree ("input#role3", [5,6,7], [1,2,4]); //spg
-	roleConflictFree ("input#role4", [5,6,7], [1,2,3]); //cdc
-	roleConflictFree ("input#role5", [1,2,3,4,6,7], false); //partner,observer
-	roleConflictFree ("input#role6", [1,2,3,4,5,7], false); //young scientists
-	roleConflictFree ("input#role7", [1,2,3,4,5,6], false); //secretariat
-
-	if ($("#igm-abstract").length) {
-		$("#igm-abstract").validate({
-		   rules: {
-			  abstract: {
-				 wordCount: ['300']
-			  }
-		   },
-		});
-	}
 
 });
 
@@ -144,17 +124,20 @@ function genderGuess ()
 	});
 }
 
-$.validator.addMethod("wordCount",
-   function(value, element, params) {
-   
-   	/*
-	* Validate by number of words
-	*/
-	
-      var typedWords = jQuery.trim(value).split(' ').length;
-      if(typedWords <= params[0]) {
-         return true;
-      }
-   },
-   jQuery.format("Your abstract has exeeded the word limit. Please keep it within {0} words.")
-);
+if ($.validator)
+{
+    $.validator.addMethod("wordCount",
+       function(value, element, params) {
+       
+        /*
+        * Validate by number of words
+        */
+        
+          var typedWords = jQuery.trim(value).split(' ').length;
+          if(typedWords <= params[0]) {
+             return true;
+          }
+       },
+       jQuery.format("Your abstract has exeeded the word limit. Please keep it within {0} words.")
+    );
+}

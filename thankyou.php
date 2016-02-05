@@ -75,14 +75,6 @@
 					<dd><?php echo htmlspecialchars($fields['dateOfBirth']); ?></dd>
 				<dt>Nationality</dt>
 					<dd><?php echo htmlspecialchars($fields['nationality']); ?></dd>
-				<dt>Passport issuing authority</dt>
-					<dd><?php echo stripslashes(htmlspecialchars($fields['issuingAuth'])); ?></dd>
-				<dt>Passport date of issue</dt>
-					<dd><?php echo htmlspecialchars($fields['dateOfIssue']); ?></dd>
-				<dt>Passport date of expiry</dt>
-					<dd><?php echo htmlspecialchars($fields['dateOfExpiry']); ?></dd>
-				<dt>Flight arrangement</dt>
-					<dd><?php $fields['flightArrangement'] == 'self' ? print 'By myself' : print 'By APN Secretariat'; ?></dd>
 				<dt>Room Type</dt>
 					<dd><?php if ($fields['roomType'] == 'smoking') {
     echo 'Smoking room';
@@ -94,19 +86,7 @@
                               ?>
 					</dd>
 				<dt>Meal preferences</dt>
-					<dd><?php !empty($fields['meal']) ? print $fields['meal'] : print 'Not specified'; ?></dd>
-				<dt>Role in IGM/SPG Meeting</dt>
-					<dd><?php if (!empty($fields['role'])) {
-    foreach ($fields['role'] as $val) {
-        echo '<li class="label label-default">'.htmlspecialchars($val).'</li>';
-    }
-} else {
-    echo 'Not specified';
-}
-                        ?>
-					</dd>
-				<dt>Additional information</dt>
-					<dd><?php !empty($fields['requirements']) ? print stripslashes(htmlspecialchars($fields['requirements'])) : print 'Not specified'; ?></dd>
+				<dd><?php !empty($fields['meal']) ? print $fields['meal'] : print 'Not specified'; ?></dd>
 			</dl>
 			</div>
 		 <?php endif; ?>

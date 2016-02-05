@@ -187,7 +187,7 @@
 	  margin-bottom:0;
 	}
 	
-	div#form-jackpot {
+	div#form-jackpot, #sex-div, #af-fields  {
 	  display: none;
 	}
 	
@@ -197,11 +197,5 @@
 	  padding:3px;
 	  border:1px dashed red;
 	}
-	
-	.form-outer {
-	  box-shadow: 3px 3px 3px #ddd;
-	  border: 1px solid #ccc;
-	}
-	
-	
+
 } /*@media screen*/

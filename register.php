@@ -45,7 +45,7 @@
         $rules[] = apn_quick_rule('required', 'title', 'Title');
 
         //family name
-        //$rules[] = apn_quick_rule('required', 'last', 'Surname(s)');
+        //$rules[] = apn_quick_rule('required', 'last', 'Surname');
         $rules[] = apn_write_lengthx('<=', '30', 'last', 'Surname');
         $rules[] = "reg_exp,last,^[a-zA-Z '-]*$,The <span class='text-warning'>Family name/Surname</span> field should only contain letters/spaces/hyphens.";
 
@@ -54,19 +54,13 @@
         $rules[] = apn_write_lengthx('<=', '60', 'first', 'Given names');
         $rules[] = "reg_exp,first,^[a-zA-Z '-]*$,The <span class='text-warning'>Given names</span> field should only contain letters/spaces/hyphens.";
 
-        //middle name
-        $rules[] = "reg_exp,middleName,^[a-zA-Z '\.-]*$,The <span class='text-warning'>Middle names</span> field should only contain letters/spaces/hyphens.";
-        $rules[] = apn_write_lengthx('<', '60', 'middleName', 'Middle names');
-
-        //name suffix
-        $rules[] = "reg_exp,suffix,^[a-zA-Z\.-]*$,The <span class='text-warning'>Name suffix</span> field should only contain letters/periods/hyphens.";
-        $rules[] = apn_write_lengthx('<=', '10', 'suffix', 'Name suffix');
+        //full name
+        $rules[] = apn_quick_rule('required', 'fullName', 'Full name');
+        $rules[] = "reg_exp,middleName,^[a-zA-Z '\.-]*$,The <span class='text-warning'>Full name</span> field should only contain letters/spaces/hyphens.";
+        $rules[] = apn_write_lengthx('<', '100', 'fullName', 'Full name');
 
         //sex
         $rules[] = apn_quick_rule('required', 'sex', 'Sex');
-
-        //role in APN (less strict, allow easy submission and Secretariat needs to follow up);
-        $rules[] = apn_quick_rule('required', 'role', 'I\'m participating as...');
 
         //Position/Job title
         $rules[] = apn_quick_rule('required', 'jobTitle', 'Job title');
@@ -85,21 +79,6 @@
 
         //Address line 2
         $rules[] = apn_write_lengthx('<=', '100', 'addressLine2', 'Address line 2');
-
-        /* //City
-        $rules[] = apn_quick_rule('required', 'city', 'City');
-        $rules[] = apn_write_lengthx('<=', '30', 'city', 'City');
-        $rules[] = "reg_exp,city,^[a-zA-Z -]*$,The <span class='text-warning'>City</span> field should only contain letters/spaces/hyphens.";
-
-        //State
-        $rules[] = "reg_exp,state,^[a-zA-Z -]*$,The <span class='text-warning'>State/Province/Prefecture</span> field should only contain letters/spaces/hyphens.";
-        $rules[] = apn_write_lengthx('<=', '30', 'state', 'State');
-        
-        //Postal/Zip code
-        $rules[] = apn_write_lengthx('<=', '10', 'zipCode', 'Postal/Zip code');
-        $rules[] = "reg_exp,zipCode,^[a-zA-Z0-9 -]*$,The <span class='text-warning'>Postal/Zip code</span> field should only contain numbers/letters/spaces/hyphens.";
-        
-        */
 
         //Country of Office
         $rules[] = apn_quick_rule('required', 'officeCountry', 'Country (office)');
@@ -127,25 +106,6 @@
 
         //Nationality
         $rules[] = apn_quick_rule('required', 'nationality', 'Nationnality');
-
-        //Issuing authority
-        $rules[] = apn_quick_rule('required', 'issuingAuth', 'Issuing authority');
-        $rules[] = apn_write_lengthx('<=', '100', 'issuingAuth', 'Issuing authority');
-
-        //date of issue
-        $rules[] = apn_quick_rule('required', 'dateOfIssue', 'Date of issue');
-        $rules[] = "reg_exp,dateOfIssue,^[0-9\-\/]*$,<span class='text-warning'>Date of issue</span> should be in dd/mm/yyyy format (e.g. 31/01/2013).";
-        $rules[] = "length<20,dateOfIssue,<span class='text-warning'>Date of issue</span> should be in dd/mm/yyyy format (e.g. 31/01/2013).";
-
-        //date of expiry
-        $rules[] = apn_quick_rule('required', 'dateOfExpiry', 'Date of expiry');
-        $rules[] = "reg_exp,dateOfExpiry,^[0-9\-\/]*$,<span class='text-warning'>Date of expiry</span> should be in dd/mm/yyyy format (e.g. 31/01/2013).";
-        $rules[] = "length<20,dateOfExpiry,<span class='text-warning'>Date of expiry</span> should be in dd/mm/yyyy format (e.g. 31/01/2013).";
-
-        //Flight arrangement
-        //$rules[] = apn_quick_rule('required', 'flightArrangement', 'Flight arrangement');
-
-        //Room preferences
 
         //Meal preferences
         $rules[] = apn_write_lengthx('<=', '100', 'meal', 'Meal preferences');
@@ -186,9 +146,22 @@
 
     ?>
 
-	    <?php include_once 'templates/sidebar.php'; ?>
-        <div class="col-md-9">
-			<?php  include 'form.php'; ?>
-        </div> <!-- col-md-9 -->
+	    
+        <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4>Registration: <?php echo MEETING_NAME ?>, 
+                    <?php echo MEETING_DATE ?>, <?php echo MEETING_LOCATION ?>
+                    </h4>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                            <?php  include 'form.php'; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- col-md-8 -->
       </div> <!-- row -->
 <?php include_once 'templates/footer.php'; ?>
