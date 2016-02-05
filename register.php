@@ -1,5 +1,5 @@
 <?php
-
+    
 	/* IMPORTANT GUIDANCE ON FORM SETUP ( settings at includes/apn-functions.php )
 	
 	Before setup: 
@@ -13,6 +13,8 @@
 		
 	*/
 	
+    $apn_funded = $_GET['af'] == '1' ? TRUE : FALSE; 
+    
 	require_once("includes/apn-functions.php");
 	
 	$page_name = "register";

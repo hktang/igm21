@@ -370,40 +370,42 @@ ERRORMSG;
 </textarea>
 </fieldset>
 
-<h3 class="text-primary">5. For APN-funded participants only</h3>
+<div <?php if ( ! $apn_funded ) echo 'style="display:none"'; ?>>
+    <h3 class="text-primary">5. For APN-funded participants only</h3>
 
-<fieldset>
-<legend>Flight arrangement</legend>
-<div>For the air tickets to and from the meeting venue...</div>
-<div class="radio">
-  <label>
-    <input <?php if (REGISTRATION_OPEN != TRUE ) { echo 'disabled="true"'; } ?> type="radio" name="flightArrangement" id="flightArrangement1" value="self" <?php if (@$fields["flightArrangement"] == "self") echo "checked"; ?>>
-    I would like to arrange it by myself;
-  </label>
-</div>
-<div class="radio">
-  <label>
-    <input <?php if (REGISTRATION_OPEN != TRUE ) { echo 'disabled="true"'; } ?>   type="radio" name="flightArrangement" id="flightArrangement2" value="APN" <?php if (@$fields["flightArrangement"] == "APN") echo "checked"; ?>>
-    I would like APN Secretariat to take care of it.
-  </label>
-</div>
-</fieldset>
+    <fieldset>
+    <legend>Flight arrangement</legend>
+    <div>For the air tickets to and from the meeting venue...</div>
+    <div class="radio">
+      <label>
+        <input <?php if (REGISTRATION_OPEN != TRUE ) { echo 'disabled="true"'; } ?> type="radio" name="flightArrangement" id="flightArrangement1" value="self" <?php if (@$fields["flightArrangement"] == "self") echo "checked"; ?>>
+        I would like to arrange it by myself;
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input <?php if (REGISTRATION_OPEN != TRUE ) { echo 'disabled="true"'; } ?>   type="radio" name="flightArrangement" id="flightArrangement2" value="APN" <?php if (@$fields["flightArrangement"] == "APN") echo "checked"; ?>>
+        I would like APN Secretariat to take care of it.
+      </label>
+    </div>
+    </fieldset>
 
-<fieldset>
-<legend for="canCover[]">I can cover the following cost(s): </legend>
-  <div id="cancover-div" >
-	<label class="checkbox-inline">
-	  <input <?php if (REGISTRATION_OPEN != TRUE ) { echo 'disabled="true"'; } ?> type="checkbox" id="canCover1" name="canCover[]" value="flight"  <?php apn_check_fields("canCover", "flight"); ?>>
-	  Cost for my flights;
-	</label>
-	<br/>
-	<label class="checkbox-inline">
-	  <input <?php if (REGISTRATION_OPEN != TRUE ) { echo 'disabled="true"'; } ?> type="checkbox" id="canCover2" name="canCover[]" value="accommodation" <?php apn_check_fields("canCover", "accommodation"); ?>> 
-	  Cost for my accommodation.
-	</label>
-  </div>
- </fieldset>
- 
+    <fieldset>
+    <legend for="canCover[]">I can cover the following cost(s): </legend>
+      <div id="cancover-div" >
+        <label class="checkbox-inline">
+          <input <?php if (REGISTRATION_OPEN != TRUE ) { echo 'disabled="true"'; } ?> type="checkbox" id="canCover1" name="canCover[]" value="flight"  <?php apn_check_fields("canCover", "flight"); ?>>
+          Cost for my flights;
+        </label>
+        <br/>
+        <label class="checkbox-inline">
+          <input <?php if (REGISTRATION_OPEN != TRUE ) { echo 'disabled="true"'; } ?> type="checkbox" id="canCover2" name="canCover[]" value="accommodation" <?php apn_check_fields("canCover", "accommodation"); ?>> 
+          Cost for my accommodation.
+        </label>
+      </div>
+     </fieldset>
+</div>
+
 <hr/>
 
 <input <?php if (REGISTRATION_OPEN != TRUE ) { echo 'disabled="true"'; } ?> class="btn btn-lg btn-success" id="register" name="register" type="submit" value="Click here to Register">

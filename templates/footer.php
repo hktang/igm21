@@ -1,5 +1,5 @@
-﻿      <div class="footer">
-        <p>&copy; 2015 APN Secretariat</p>
+      <div class="footer">
+        <p>&copy; 2015–2016 APN Secretariat</p>
       </div>
 
     </div> <!-- .container -->
