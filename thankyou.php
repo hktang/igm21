@@ -19,7 +19,7 @@
 
 ?>
 
-	  <?php include_once 'templates/jumbotron.php'; ?>
+	  
       <div class="row">
 		<?php include_once 'templates/sidebar.php'; ?>
 
@@ -36,16 +36,13 @@
 			<p>Your registration form is received and we will send you a confirmation email shortly.</p>
 			<p>If you would like to make any change to your registration information, 
 			please contact the <a href="contact.php">APN Secretariat</a> directly.</p>
-			<p>Thank you again and look forward to meeting you in Siem Reap.</p>
+			<p>Thank you again and look forward to meeting you soon.</p>
 			
 		
 			<div class="thumbnail recap">
 			<h2><span class="glyphicon glyphicon-user"></span>
 				<?php echo htmlspecialchars($fields['title']); ?> 
-				<?php echo stripslashes(htmlspecialchars($fields['first'])); ?> 
-				<?php echo stripslashes(htmlspecialchars($fields['middleName'])); ?> 
-				<?php echo stripslashes(htmlspecialchars($fields['last'])); ?> 
-				<?php echo stripslashes(htmlspecialchars($fields['suffix'])); ?> 
+				<?php echo stripslashes(htmlspecialchars($fields['fullName'])); ?> 
 			</h2>
 			<h4>
 				<?php echo stripslashes(htmlspecialchars($fields['jobTitle'])); ?> <br/>
@@ -75,16 +72,6 @@
 					<dd><?php echo htmlspecialchars($fields['dateOfBirth']); ?></dd>
 				<dt>Nationality</dt>
 					<dd><?php echo htmlspecialchars($fields['nationality']); ?></dd>
-				<dt>Room Type</dt>
-					<dd><?php if ($fields['roomType'] == 'smoking') {
-    echo 'Smoking room';
-} elseif ($fields['roomType'] == 'non-smoking') {
-    echo 'Non-smoking room';
-} else {
-    echo 'Not specified';
-}
-                              ?>
-					</dd>
 				<dt>Meal preferences</dt>
 				<dd><?php !empty($fields['meal']) ? print $fields['meal'] : print 'Not specified'; ?></dd>
 			</dl>

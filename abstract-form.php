@@ -74,7 +74,7 @@ ERRORMSG;
 </div>
 		
 <div class="row">
-        <div class="form-group col-md-4 form-el-inline">
+        <div class="form-group col-md-2 form-el-inline">
 			<label for="title" class="control-label required">Title</label>
 			<div class="">
 				<select <?php if (ABSTRACT_OPEN != true) {
@@ -113,7 +113,44 @@ ERRORMSG;
 				</select>
 			</div>
 		</div>
-</div>
+
+		<div class="form-group col-md-4 form-el-inline">
+			<label for="last" class="control-label ">Family name/Surname</label>
+			<div class="">
+				<input <?php if (ABSTRACT_OPEN != true) {
+    echo 'disabled="true"';
+} ?> class=" form-control" id="last" maxlength="255" name="last" placeholder="Family name/surname as appear in your passport" type="text" value="<?php echo htmlspecialchars(@$fields['last']); ?>" > 
+			</div>
+		</div>
+
+		<div class="form-group col-md-4 form-el-inline">
+			<label for="first" class=" control-label required">Given name(s)</label>
+			<div class="">
+				<input <?php if (ABSTRACT_OPEN != true) {
+    echo 'disabled="true"';
+} ?> class="form-control" id="first" maxlength="255" name="first" placeholder="Given name(s) as appear in your passport..." type="text" value="<?php echo htmlspecialchars(@$fields['first']); ?>" required> 
+			</div>
+		</div>
+
+		<div class="form-group col-md-2 form-el-inline">
+			<label for="age" class="control-label required">Age</label> 
+			<div class="">
+				<input <?php if (ABSTRACT_OPEN != true) {
+    echo 'disabled="true"';
+} ?> class="form-control" id="age" name="age" size="10" placeholder=""  type="text" value="<?php echo htmlspecialchars(@$fields['age']); ?>" required>
+			</div>
+		</div>
+        
+		<!--div class="form-group col-md-4 form-el-inline">
+			<label for="middleName" class=" control-label">Middle name(s)</label>
+			<div class="">
+				<input <?php if (ABSTRACT_OPEN != true) {
+    echo 'disabled="true"';
+} ?> class="form-control" id="middleName" maxlength="255" name="middleName" placeholder="Middle name(s), if any" type="text" value="<?php echo htmlspecialchars(@$fields['middleName']); ?>"> 
+			</div>
+		</div-->
+		
+</div> <!--row -->	
 
 <div class="row">
 		<div id="sex-div" class="form-group col-md-4 form-el-inline" >
@@ -139,51 +176,6 @@ ERRORMSG;
 				Female
 			  </label>
 			</div>
-			</div>
-		</div>
-</div>
-
-
-<div class="row">
-		<div class="form-group col-md-8 form-el-inline">
-			<label for="last" class="control-label ">Family name/Surname</label>
-			<div class="">
-				<input <?php if (ABSTRACT_OPEN != true) {
-    echo 'disabled="true"';
-} ?> class=" form-control" id="last" maxlength="255" name="last" placeholder="Family name/surname as appear in your passport" type="text" value="<?php echo htmlspecialchars(@$fields['last']); ?>" > 
-			</div>
-		</div>
-</div>
-
-<div class="row">
-
-		<div class="form-group col-md-6 form-el-inline">
-			<label for="first" class=" control-label required">Given name(s)</label>
-			<div class="">
-				<input <?php if (ABSTRACT_OPEN != true) {
-    echo 'disabled="true"';
-} ?> class="form-control" id="first" maxlength="255" name="first" placeholder="Given name(s) as appear in your passport..." type="text" value="<?php echo htmlspecialchars(@$fields['first']); ?>" required> 
-			</div>
-		</div>
-
-		<div class="form-group col-md-4 form-el-inline">
-			<label for="middleName" class=" control-label">Middle name(s)</label>
-			<div class="">
-				<input <?php if (ABSTRACT_OPEN != true) {
-    echo 'disabled="true"';
-} ?> class="form-control" id="middleName" maxlength="255" name="middleName" placeholder="Middle name(s), if any" type="text" value="<?php echo htmlspecialchars(@$fields['middleName']); ?>"> 
-			</div>
-		</div>
-		
-</div> <!--row -->	
-
-<div class="row">
-		<div class="form-group col-md-2 form-el-inline">
-			<label for="age" class="control-label required">Age</label> 
-			<div class="">
-				<input <?php if (ABSTRACT_OPEN != true) {
-    echo 'disabled="true"';
-} ?> class="form-control" id="age" name="age" size="10" placeholder=""  type="text" value="<?php echo htmlspecialchars(@$fields['age']); ?>" required>
 			</div>
 		</div>
 </div>
@@ -330,7 +322,7 @@ ERRORMSG;
 	  <input <?php if (ABSTRACT_OPEN != true) {
     echo 'disabled="true"';
 } ?> type="checkbox" id="availability" name="availability" value="yes" >
-	  I am currently residing in <?php echo MEETING_COUNTRY; ?> and will be available to present my poster on 25 March 2015 in Kathmandu.
+	  I am currently residing in <?php echo ABSTRACT_MEETING_LOCATION ; ?> and will be available to present my poster on <?php echo ABSTRACT_DATES; ?>.
 	</label>
 </div>
 

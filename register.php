@@ -44,20 +44,15 @@
         //title
         $rules[] = apn_quick_rule('required', 'title', 'Title');
 
-        //family name
-        //$rules[] = apn_quick_rule('required', 'last', 'Surname');
-        $rules[] = apn_write_lengthx('<=', '30', 'last', 'Surname');
-        $rules[] = "reg_exp,last,^[a-zA-Z '-]*$,The <span class='text-warning'>Family name/Surname</span> field should only contain letters/spaces/hyphens.";
-
-        //given name
-        $rules[] = apn_quick_rule('required', 'first', 'Given name(s)');
-        $rules[] = apn_write_lengthx('<=', '60', 'first', 'Given names');
-        $rules[] = "reg_exp,first,^[a-zA-Z '-]*$,The <span class='text-warning'>Given names</span> field should only contain letters/spaces/hyphens.";
-
         //full name
         $rules[] = apn_quick_rule('required', 'fullName', 'Full name');
         $rules[] = "reg_exp,middleName,^[a-zA-Z '\.-]*$,The <span class='text-warning'>Full name</span> field should only contain letters/spaces/hyphens.";
         $rules[] = apn_write_lengthx('<', '100', 'fullName', 'Full name');
+
+        //occupation
+        $rules[] = apn_quick_rule('required', 'occupation', 'Occupation');
+        $rules[] = apn_write_lengthx('<=', '60', 'first', 'Occupation');
+        $rules[] = "reg_exp,first,^[a-zA-Z '-]*$,The <span class='text-warning'>Occupation</span> field should only contain letters/spaces/hyphens.";
 
         //sex
         $rules[] = apn_quick_rule('required', 'sex', 'Sex');

@@ -137,22 +137,12 @@ ERRORMSG;
             </div>
         </div>
 
-        <div class="form-group col-md-5 form-el-inline">
-            <label for="last" class="control-label ">Surname/Family name</label>
+        <div class="form-group col-md-10 form-el-inline">
+            <label for="fullName" class=" control-label required">Full name as it appears on your passport</label>
             <div class="">
                 <input <?php if (REGISTRATION_OPEN != true) {
     echo 'disabled="true"';
-} ?>   class=" form-control" id="last" maxlength="255" name="last" placeholder="" type="text" value="<?php echo htmlspecialchars(@$fields['last']); ?>" > 
-            </div>
-        </div>
-
-        
-        <div class="form-group col-md-5 form-el-inline">
-            <label for="first" class=" control-label required">Given name(s)</label>
-            <div class="">
-                <input <?php if (REGISTRATION_OPEN != true) {
-    echo 'disabled="true"';
-} ?>   class="form-control" id="first" maxlength="255" name="first" placeholder="" type="text" value="<?php echo htmlspecialchars(@$fields['first']); ?>" required> 
+} ?>   class="form-control" id="fullName" maxlength="255" name="fullName" placeholder="" type="text" value="<?php echo htmlspecialchars(@$fields['fullName']); ?>"> 
             </div>
         </div>
         
@@ -190,12 +180,22 @@ ERRORMSG;
 </div> <!--row --> 
 
 <div class="row">
+
+    <div class="form-group col-md-6 form-el-inline">
+                <label for="occupation" class="control-label required">Occupation</label>
+                <div class="">
+                    <input <?php if (REGISTRATION_OPEN != true) {
+        echo 'disabled="true"';
+    } ?>   class="form-control" id="occupation" maxlength="255" name="occupation" placeholder="Civil servant, university staff, etc"  type="text" value="<?php echo htmlspecialchars(@$fields['occupation']); ?>" required>
+                </div>
+    </div>
+
     <div class="form-group col-md-6 form-el-inline">
                 <label for="jobTitle" class="control-label required">Position/Job title</label>
                 <div class="">
                     <input <?php if (REGISTRATION_OPEN != true) {
         echo 'disabled="true"';
-    } ?>   class="form-control" id="jobTitle" maxlength="255" name="jobTitle" placeholder=""  type="text" value="<?php echo htmlspecialchars(@$fields['jobTitle']); ?>" required>
+    } ?>   class="form-control" id="jobTitle" maxlength="255" name="jobTitle" placeholder="Director, Dean, Professor, Senior Researcher, etc"  type="text" value="<?php echo htmlspecialchars(@$fields['jobTitle']); ?>" required>
                 </div>
     </div>
 
@@ -209,7 +209,7 @@ ERRORMSG;
     </div>
             
 
-    <div class="form-group col-md-12 form-el-inline">
+    <div class="form-group col-md-6 form-el-inline">
                 <label for="organisation" class="control-label required">Organisation</label>
                 <div class="">
                     <input <?php if (REGISTRATION_OPEN != true) {
@@ -220,7 +220,7 @@ ERRORMSG;
             
 
     <div class="form-group col-md-12 form-el-inline">
-                <label for="addressLine1" class=" control-label required">Address line 1</label>
+                <label for="addressLine1" class=" control-label required">Organisation address line 1</label>
                 <div class="">
                     <input <?php if (REGISTRATION_OPEN != true) {
         echo 'disabled="true"';
@@ -230,7 +230,7 @@ ERRORMSG;
             
             
     <div class="form-group col-md-12 form-el-inline">
-                <label for="addressLine2" class="control-label">Address line 2</label>
+                <label for="addressLine2" class="control-label">Organisation address line 2 (optional)</label>
                 <div class="">
                     <input <?php if (REGISTRATION_OPEN != true) {
         echo 'disabled="true"';
@@ -280,14 +280,6 @@ ERRORMSG;
 
 <h3 class="text-primary">2. Passport details</h3>
 <div class="row">
-        <div class="form-group col-md-8 form-el-inline">
-            <label for="fullName" class=" control-label required">Full name as it appears on your passport</label>
-            <div class="">
-                <input <?php if (REGISTRATION_OPEN != true) {
-    echo 'disabled="true"';
-} ?>   class="form-control" id="fullName" maxlength="255" name="fullName" placeholder="" type="text" value="<?php echo htmlspecialchars(@$fields['fullName']); ?>"> 
-            </div>
-        </div>
         
         <div class="form-group col-md-4 form-el-inline">
             <label for="passportNo" class="control-label required">Passport number</label>
@@ -307,7 +299,7 @@ ERRORMSG;
             </div>
         </div>
         
-        <div class="form-group col-md-5 form-el-inline">
+        <div class="form-group col-md-4 form-el-inline">
             <label for="nationality" class="control-label required">Nationality</label>
             <div class="">
                 <select <?php if (REGISTRATION_OPEN != true) {
@@ -318,7 +310,7 @@ ERRORMSG;
             </div>
         </div>
 <div class="form-group col-md-12"><span class="help-block alert alert-warning">
-<strong>Important: </strong>The above passport information will be used in the 
+<strong>Important: </strong>The information provided above will be used in the 
 official invitation letter, which is required for your application for a visa to
 enter China. Additionally, a passport with at least <strong>six months' validity
 </strong> is required in order to enter China. Please check and make sure your 
@@ -405,7 +397,7 @@ passport meets this requirement.</span></div>
     <div>
         <input <?php if (REGISTRATION_OPEN != true) {
     echo 'disabled="true"';
-} ?>   class=" form-control" id="meal" maxlength="255" name="meal" placeholder="Meal restrictions/preferences..." type="text"  value="<?php echo htmlspecialchars(@$fields['meal']); ?>"> 
+} ?>   class=" form-control" id="meal" maxlength="255" name="meal" placeholder="" type="text"  value="<?php echo htmlspecialchars(@$fields['meal']); ?>"> 
     </div>
 </fieldset>
 

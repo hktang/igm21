@@ -40,11 +40,11 @@
                     <span class="glyphicon glyphicon-info-sign"></span>General information
                 </a>
             </li-->
-            <li <?php echo ($page_name == 'register') ? "class='active'" : ''; ?>>
-                <a href="<?php echo BASE_DIRECTORY ?>register.php">
+            <!--li <?php echo ($page_name == 'register') ? "class='active'" : ''; ?>>
+                <a href="<?php // echo BASE_DIRECTORY . "register.php" ?>">
                     <span class="glyphicon glyphicon-list"></span> Registration
                 </a>
-            </li>
+            </li-->
             <li <?php echo ($page_name == 'papers') ? "class='active'" : ''; ?>>
                 <a href="<?php echo SECURE_SERVER_URL; ?>">
                     <span class="glyphicon glyphicon-book"></span> Meeting Documents

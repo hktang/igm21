@@ -9,7 +9,7 @@
 	/* basically no need to change the code below ne ... */
 	
 	var markerLoc=new google.maps.LatLng(myLat,myLong);
-	var myCenter=new google.maps.LatLng( myLat + 0.340692, myLong - 3.067081);
+	var myCenter=new google.maps.LatLng( myLat + 0.340692, myLong - 8.067081);
 
 	var marker=new google.maps.Marker({
 		position	: markerLoc,

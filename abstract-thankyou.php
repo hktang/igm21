@@ -19,7 +19,7 @@
 
 ?>
 
-	  <?php include_once 'templates/jumbotron.php'; ?>
+	  
       <div class="row">
 		<?php include_once 'templates/sidebar.php'; ?>
 		

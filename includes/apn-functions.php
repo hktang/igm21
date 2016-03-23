@@ -9,20 +9,31 @@
  * This is useful for easy configuring future minisites
 */
 
+date_default_timezone_set('Asia/Tokyo');
+$settings_timenow = new DateTime("now");
+$settings_deadline = new DateTime();
+$settings_deadline->setDate(2016, 4, 15);   //int only. NO padding 0! 
+$settings_deadline->setTime(23, 59, 59);   //int only. NO padding 0! 
+$settings_abstract_deadline = new DateTime();
+$settings_abstract_deadline->setDate(2016, 4, 15);   //int only. NO padding 0! 
+$settings_abstract_deadline->setTime(23, 59, 59);   //int only. NO padding 0! 
+$settings_call_open = $settings_timenow < $settings_deadline ? TRUE : FALSE;
+$settings_abstract_open = $settings_timenow < $settings_abstract_deadline ? TRUE : FALSE;
+
 //meeting information
 define('MEETING_NAME', '21st IGM/SPG Meeting');
 define('MEETING_SHORTNAME', 'IGM21');
 define('MEETING_DATE', '18-22 April 2016');
-define('MEETING_VENUE', 'Zhengzhou, China');
-define('MEETING_ADDRESS', 'Zhengzhou, Henan, China');
-define('MEETING_LOCATION', 'Zhengzhou, China');
+define('MEETING_VENUE', 'Zhengfangyuan Jinjiang International Hotel');
+define('MEETING_ADDRESS', '86 Huang He Dong Lu');
+define('MEETING_LOCATION', 'Zhengzhou, Henan, China');
 define('MEETING_COUNTRY', 'China');
 
 //contact information
 define('OFFICIAL_EMAIL', 'igm21@apn-gcr.org');
-define('VENUE_EMAIL', 'mail@hotelcom');
-define('VENUE_PHONE', '+86-371-1234-1234');
-define('VENUE_FAX', '+86-371-1234-1234');
+define('VENUE_EMAIL', '');
+define('VENUE_PHONE', '+86 371 5569 8888');
+define('VENUE_FAX', '+86 371 5569 8888');
 
 //site components
 define('BASE_DIRECTORY', 'https://www.apn-gcr.org/igm/21/');
@@ -33,21 +44,27 @@ define('JUMBOTRON_IMG_3', 'china3.png');
 
 //main registration
 define('THIS_FORM_ID', 10);                                   //form ID for register.php
-define('REGISTRATION_OPEN', false);                                 //Status of main registration form
+define('REGISTRATION_OPEN', true);                                 //Status of main registration form
 define('REGISTRATION_INIT', false);                                //Must be TRUE before setup and FALSE after
 
 //abstract form
-define('ABSTRACT_FORM_ID', 11);                                    //form ID for register.php
-define('ABSTRACT_OPEN', false);                                    //Status of abstract form
-define('ABSTRACT_INIT', false);                                    //Must be TRUE before setup and FALSE after
-define('ABSTRACT_ANNOUNCEMENT_URL', '#');   //Status of abstract form
+define('ABSTRACT_FORM_ID', 11);                                    //form ID for register.php (do not change for IGM)
+if ($settings_abstract_open === TRUE) {                             //Status of abstract form
+    define('ABSTRACT_OPEN', true);
+}else{
+    define('ABSTRACT_OPEN', false);
+}                 
+define('ABSTRACT_INIT', false);                                    //no need to change as we are using form 11 always.
+define('ABSTRACT_ANNOUNCEMENT_URL', 'https://www.apn-gcr.org/igm/21/abstract-submission.php');   //Status of abstract form
+define('ABSTRACT_MEETING_LOCATION', 'Henan, China');   //location for scientists criteria
+define('ABSTRACT_DATES', '20-21 April 2016');
 
 /* Helper functions
  * 
 */
 function apn_list_county_options($name)
 {
-    $countries = ['Afghanistan', 'Albania', 'Algeria', 'Andorra', 'Antigua and Barbuda', 'Argentina', 'Armenia', 'Australia', 'Austria', 'Azerbaijan', 'Bahamas', 'Bahrain', 'Bangladesh', 'Barbados', 'Belarus', 'Belgium', 'Belize', 'Benin', 'Bhutan', 'Bolivia', 'Bosnia and Herzegovina', 'Botswana', 'Brazil', 'Brunei', 'Bulgaria', 'Burkina Faso', 'Burundi', 'Cambodia', 'Cameroon', 'Canada', 'Cape Verde', 'Central African Republic', 'Chad', 'Chile', 'China', 'Colombia', 'Comoros', 'Congo', 'Costa Rica', "Côte d'Ivoire", 'Croatia', 'Cuba', 'Cyprus', 'Czech Republic', 'Denmark', 'Djibouti', 'Dominica', 'Dominican Republic', 'East Timor', 'Ecuador', 'Egypt', 'El Salvador', 'Equatorial Guinea', 'Eritrea', 'Estonia', 'Ethiopia', 'Fiji', 'Finland', 'France', 'Gabon', 'Gambia', 'Georgia', 'Germany', 'Ghana', 'Greece', 'Grenada', 'Guatemala', 'Guinea', 'Guinea-Bissau', 'Guyana', 'Haiti', 'Honduras', 'Hong Kong', 'Hungary', 'Iceland', 'India', 'Indonesia', 'Iran', 'Iraq', 'Ireland', 'Israel', 'Italy', 'Jamaica', 'Japan', 'Jordan', 'Kazakhstan', 'Kenya', 'Kiribati', 'North Korea', 'South Korea', 'Kuwait', 'Kyrgyzstan', 'Laos', 'Latvia', 'Lebanon', 'Lesotho', 'Liberia', 'Libya', 'Liechtenstein', 'Lithuania', 'Luxembourg', 'Macedonia', 'Madagascar', 'Malawi', 'Malaysia', 'Maldives', 'Mali', 'Malta', 'Marshall Islands', 'Mauritania', 'Mauritius', 'Mexico', 'Micronesia', 'Moldova', 'Monaco', 'Mongolia', 'Montenegro', 'Morocco', 'Mozambique', 'Myanmar', 'Namibia', 'Nauru', 'Nepal', 'Netherlands', 'New Zealand', 'Nicaragua', 'Niger', 'Nigeria', 'Norway', 'Oman', 'Pakistan', 'Palau', 'Panama', 'Papua New Guinea', 'Paraguay', 'Peru', 'Philippines', 'Poland', 'Portugal', 'Puerto Rico', 'Qatar', 'Romania', 'Russia', 'Rwanda', 'Saint Kitts and Nevis', 'Saint Lucia', 'Saint Vincent and the Grenadines', 'Samoa', 'San Marino', 'Sao Tome and Principe', 'Saudi Arabia', 'Senegal', 'Serbia and Montenegro', 'Seychelles', 'Sierra Leone', 'Singapore', 'Slovakia', 'Slovenia', 'Solomon Islands', 'Somalia', 'South Africa', 'Spain', 'Sri Lanka', 'Sudan', 'Suriname', 'Swaziland', 'Sweden', 'Switzerland', 'Syria', 'Chinese Taipei', 'Tajikistan', 'Tanzania', 'Thailand', 'Togo', 'Tonga', 'Trinidad and Tobago', 'Tunisia', 'Turkey', 'Turkmenistan', 'Tuvalu', 'Uganda', 'Ukraine', 'United Arab Emirates', 'United Kingdom', 'United States', 'Uruguay', 'Uzbekistan', 'Vanuatu', 'Vatican City', 'Venezuela', 'Vietnam', 'Yemen', 'Zambia', 'Zimbabwe'];
+    $countries = ['Afghanistan', 'Albania', 'Algeria', 'Andorra', 'Antigua and Barbuda', 'Argentina', 'Armenia', 'Australia', 'Austria', 'Azerbaijan', 'Bahamas', 'Bahrain', 'Bangladesh', 'Barbados', 'Belarus', 'Belgium', 'Belize', 'Benin', 'Bhutan', 'Bolivia', 'Bosnia and Herzegovina', 'Botswana', 'Brazil', 'Brunei', 'Bulgaria', 'Burkina Faso', 'Burundi', 'Cambodia', 'Cameroon', 'Canada', 'Cape Verde', 'Central African Republic', 'Chad', 'Chile', 'China', 'Colombia', 'Comoros', 'Congo', 'Costa Rica', "Côte d'Ivoire", 'Croatia', 'Cuba', 'Cyprus', 'Czech Republic', 'Denmark', 'Democratic People\'s Republic of Korea', 'Djibouti', 'Dominica', 'Dominican Republic', 'East Timor', 'Ecuador', 'Egypt', 'El Salvador', 'Equatorial Guinea', 'Eritrea', 'Estonia', 'Ethiopia', 'Fiji', 'Finland', 'France', 'Gabon', 'Gambia', 'Georgia', 'Germany', 'Ghana', 'Greece', 'Grenada', 'Guatemala', 'Guinea', 'Guinea-Bissau', 'Guyana', 'Haiti', 'Honduras', 'Hong Kong', 'Hungary', 'Iceland', 'India', 'Indonesia', 'Iran', 'Iraq', 'Ireland', 'Israel', 'Italy', 'Jamaica', 'Japan', 'Jordan', 'Kazakhstan', 'Kenya', 'Kiribati', 'Kuwait', 'Kyrgyzstan', 'Laos', 'Latvia', 'Lebanon', 'Lesotho', 'Liberia', 'Libya', 'Liechtenstein', 'Lithuania', 'Luxembourg', 'Macedonia', 'Madagascar', 'Malawi', 'Malaysia', 'Maldives', 'Mali', 'Malta', 'Marshall Islands', 'Mauritania', 'Mauritius', 'Mexico', 'Micronesia', 'Moldova', 'Monaco', 'Mongolia', 'Montenegro', 'Morocco', 'Mozambique', 'Myanmar', 'Namibia', 'Nauru', 'Nepal', 'Netherlands', 'New Zealand', 'Nicaragua', 'Niger', 'Nigeria', 'Norway', 'Oman', 'Pakistan', 'Palau', 'Panama', 'Papua New Guinea', 'Paraguay', 'Peru', 'Philippines', 'Poland', 'Portugal', 'Puerto Rico', 'Qatar', 'Republic of Korea', 'Romania', 'Russia', 'Rwanda', 'Saint Kitts and Nevis', 'Saint Lucia', 'Saint Vincent and the Grenadines', 'Samoa', 'San Marino', 'Sao Tome and Principe', 'Saudi Arabia', 'Senegal', 'Serbia and Montenegro', 'Seychelles', 'Sierra Leone', 'Singapore', 'Slovakia', 'Slovenia', 'Solomon Islands', 'Somalia', 'South Africa', 'Spain', 'Sri Lanka', 'Sudan', 'Suriname', 'Swaziland', 'Sweden', 'Switzerland', 'Syria', 'Chinese Taipei', 'Tajikistan', 'Tanzania', 'Thailand', 'Togo', 'Tonga', 'Trinidad and Tobago', 'Tunisia', 'Turkey', 'Turkmenistan', 'Tuvalu', 'Uganda', 'Ukraine', 'United Arab Emirates', 'United Kingdom', 'United States', 'Uruguay', 'Uzbekistan', 'Vanuatu', 'Vatican City', 'Venezuela', 'Vietnam', 'Yemen', 'Zambia', 'Zimbabwe'];
 
     /* check selected country
      * using submitted data
